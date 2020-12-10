@@ -1,0 +1,73 @@
+@import '../../partials/mixins';
+@import '../../partials/global';
+
+.header {
+  height: 170px;
+  &__section {
+    @include flex(column, space-between, center);
+    &-left {
+      height: 48px;
+      &-logo{
+        margin: 12px;
+      }
+    }
+    &-right {
+      @include flex(column, flex-start, center);
+      width: 100%;
+      height: 112px;
+      &-search {
+        width: 100%;
+        position: relative;
+        &-field {
+          height: 48px;
+          width: 100%;
+          padding: 4px 0 0 42px;
+          box-sizing: border-box;
+          border: $border-style;
+          border-radius: 4px;
+          background-color: $color-input-field-background;
+          &:active {
+            border-color: $color-dark;
+          }
+        }
+        &-icon {
+          position: absolute;
+          top: 14px;
+          left: 14px;
+        }
+      }
+      &-user {
+        @include flex(row, space-between, flex-start);
+        margin-top: 8px;
+        width: 100%;
+        &-upload {
+          @extend %button;
+          flex-grow: 1;
+          padding-left: 50px;
+          position: relative;
+          &::before {
+            content: '';
+            background-image: url(../../assets/icons/Icon-upload.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 15px;
+            left: 106px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        &-avatar {
+          margin-left: 16px;
+          &-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 0%;
+          }
+        }
+      }
+    }
+  }
+}
