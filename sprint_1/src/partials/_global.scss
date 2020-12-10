@@ -51,10 +51,10 @@ $border-style: 1px solid $color-input-field-border;
 .container {
   width: 90vw;
   margin: auto;
-  // @include tablet {
-  //   width: 94vw;
-  // }
-  // @include desktop {
-  //   width: 72vw;
-  // }
+  @include tablet {
+    width: 94vw;
+  }
+  @include desktop {
+    width: 80vw;
+  }
 }
