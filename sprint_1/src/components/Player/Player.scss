@@ -10,48 +10,77 @@
 
 %control-button {
   background-color: transparent;
+  border-radius: 4px;
   border: none;
   height: 100%;
   padding: 0;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    background-color: $color-dark-control-hover;
+  }
 }
 
 .player {
   width: 100vw;
-  height: 183px;
+  height: 56vw;
+  position: relative;
+  background-color: $color-dark;
+  text-align: center;
+  @include tablet {
+    height: 52vw;
+  }
+  @include desktop {
+    height: 37.5vw;
+  }
   &__video{
     width: 100%;
-    position: relative;
+    height: 100%;
+    @include tablet {}
   }
   &__ctrl {
     @include flex(row, space-between, center);
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    transform: translate(0%, 38px);
+    right: 0;
+    bottom: 3%;
+    left: 0;
+    @include tablet {
+      width: 90%;
+    }
+    @include desktop {
+      width: 64%;
+    }
     &-play {
       @extend %control-background-style;
       margin-right: 8px;
       width: 48px;
+      @include tablet {
+        margin-right: 16px;
+      }
       &-button {
         @include flex-center;
         @extend %control-button;
         width: 100%;
         &-icon {
-          padding: 0 0 2px 4px;
+          padding: 0 0 1px 4px;
         }
       }
 
     }
     &-progress {
+      @include flex(row, space-between, center);
       @extend %control-background-style;
       flex-grow: 1;
       margin-right: 8px;
-      @include flex(row, space-between, center);
+      @include tablet {
+        margin-right: 16px;
+      }
       &-bar {
         @include flex-center;
         position: relative;
         width: 100%;
         &-line {
-          width: 70%;
+          width: 100%;
+          margin: 0 16px;
           border: 2px solid black;
         }
         &-dot {
@@ -60,17 +89,34 @@
       }
       &-time {
         display: none;
-        &-first {}
-        &-seperator {}
-        &-second {}
+        @include tablet {
+          display: block;
+          margin-right: 16px;
+        }
+        &-first {
+          @include desktop-h5;
+          color: $color-light;
+          opacity: 0.7;
+        }
+        &-separator {
+          @extend .player__ctrl-progress-time-first;
+          padding: 0 3px;
+        }
+        &-second {
+          @extend .player__ctrl-progress-time-first;
+        }
       }
     }
     &-extra {
+      @include flex(row, space-around, center);
       @extend %control-background-style;
       width: 72px;
+      @include tablet {
+        width: 80px;
+      }
       &-fullscreen {
         @extend %control-button;
-        width: 50%;
+        width: 45%;
         &-icon {
           padding: 4px 0 0 8px;
         }
