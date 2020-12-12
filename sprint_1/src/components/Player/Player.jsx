@@ -10,7 +10,7 @@ export default function Player() {
   return (
     <section className="player">
       <video className="player__video" poster={videoPoster}></video>
-      <div className="player__ctrl container">
+      <div className="player__ctrl player__ctrl--container">
         <div className="player__ctrl-play">
           <button className="player__ctrl-play-button">
             <img className="player__ctrl-play-button-icon" src={iconPlay} alt="Play Button"/>

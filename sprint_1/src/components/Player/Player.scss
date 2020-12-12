@@ -21,7 +21,7 @@
 }
 
 .player {
-  width: 100vw;
+  width: 100%;
   height: 56vw;
   position: relative;
   background-color: $color-dark;
@@ -43,11 +43,15 @@
     right: 0;
     bottom: 3%;
     left: 0;
-    @include tablet {
-      width: 90%;
-    }
-    @include desktop {
-      width: 64%;
+    &--container {
+      width: 90vw;
+      margin: auto;
+      @include tablet {
+        width: 90%;
+      }
+      @include desktop {
+        width: 64%;
+      }
     }
     &-play {
       @extend %control-background-style;
