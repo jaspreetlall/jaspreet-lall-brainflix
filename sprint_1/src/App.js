@@ -2,6 +2,7 @@ import Header from './components/Header/Header';
 import Player from './components/Player/Player';
 import Description from './components/Description/Description';
 import Comments from './components/Comments/Comments';
+import NextVideo from './components/NextVideo/NextVideo';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Description />
           <Comments />
         </article>
-        <section>Aside - Next Video</section>
+        <NextVideo />
       </div>
     </div>
   );

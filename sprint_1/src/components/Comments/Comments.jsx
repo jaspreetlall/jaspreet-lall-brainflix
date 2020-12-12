@@ -6,7 +6,7 @@ export default function Comments() {
   return (
     <div>
       <section className="form-section">
-        <h5 className="form-section__comment"><span className="form-section__comment-count">3</span> Comments</h5>
+        <h4 className="form-section__comment"><span className="form-section__comment-count">3</span> Comments</h4>
         <div className="form-section__block">
           <div className="form-section__block-wrapper">
             <img className="form-section__block-wrapper-img" src={UserPhoto} alt="User"/>
