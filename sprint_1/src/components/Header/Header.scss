@@ -31,10 +31,12 @@
       @include desktop {
         margin-right: 430px;
       }
-      &-logo{
-        margin: 12px;
-        @include tablet {
-          margin-left: 0;
+      &-link {
+        &-logo{
+          margin: 12px;
+          @include tablet {
+            margin-left: 0;
+          }
         }
       }
     }

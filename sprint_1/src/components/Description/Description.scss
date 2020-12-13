@@ -3,12 +3,12 @@
 @import '../../partials/typography';
 
 .desc {
-  &--container {
-    @include desktop {
-      width: 66%;
-      margin-left: 0;
-    }
-  }
+  // &--container {
+  //   @include desktop {
+  //     width: 66%;
+  //     margin-left: 0;
+  //   }
+  // }
   &__head {
     border-bottom: $border-style;
     padding-bottom: 22px;

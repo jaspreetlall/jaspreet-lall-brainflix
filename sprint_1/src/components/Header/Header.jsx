@@ -9,7 +9,9 @@ const Header = () => {
     <header className="header">
         <div className="header__section container">
           <div className="header__section-left">
-            <img className="header__section-left-logo" src={Logo} alt='BrainFlix Logo'/>
+            <a className="header__section-left-link" href="#">
+              <img className="header__section-left-link-logo" src={Logo} alt='BrainFlix Logo'/>
+            </a>
           </div>
           <div className="header__section-right">
             <div className="header__section-right-search">

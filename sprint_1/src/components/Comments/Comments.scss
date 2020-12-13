@@ -9,9 +9,6 @@
     box-sizing: border-box;
     padding-right: 36px;
   }
-  @include desktop {
-    width: 66%;
-  }
   &__comment {
     @include mobile-h2-sub-header;
     @include reset-margin-padding;
@@ -100,9 +97,6 @@
 
 .comments {
   &__container {
-    @include desktop {
-      width: 66%;
-    }
     &-block {
       @include flex(row, flex-start, flex-start);
       border-bottom: $border-style;
