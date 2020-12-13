@@ -6,7 +6,7 @@ import iconFullScreen from '../../assets/icons/Icon-fullscreen.svg';
 import iconVolume from '../../assets/icons/Icon-volume.svg';
 import iconScrub from '../../assets/icons/Icon-scrubber-control.svg';
 
-export default function Player() {
+function Player() {
   return (
     <section className="player">
       <video className="player__video" poster={videoPoster}></video>
@@ -39,3 +39,5 @@ export default function Player() {
     </section>
   )
 }
+
+export default Player;
