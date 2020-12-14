@@ -1,15 +1,15 @@
 import React from 'react'
 import './Player.scss';
-import videoPoster from '../../assets/images/video-list-0.jpg';
 import iconPlay from '../../assets/icons/Icon-play.svg';
 import iconFullScreen from '../../assets/icons/Icon-fullscreen.svg';
 import iconVolume from '../../assets/icons/Icon-volume.svg';
 import iconScrub from '../../assets/icons/Icon-scrubber-control.svg';
 
-function Player() {
+function Player({stream, poster, duration}) {
   return (
     <section className="player">
-      <video className="player__video" poster={videoPoster}></video>
+      <video className="player__video" poster={poster}></video>
+      {/* Video stream source to be included in future sprint. */}
       <div className="player__ctrl player__ctrl--container">
         <div className="player__ctrl-play">
           <button className="player__ctrl-play-button">
@@ -24,7 +24,7 @@ function Player() {
           <div className="player__ctrl-progress-time">
             <span className="player__ctrl-progress-time-first">0:00</span>
             <span className="player__ctrl-progress-time-separator">/</span>
-            <span className="player__ctrl-progress-time-second">0:42</span>
+            <span className="player__ctrl-progress-time-second">{duration}</span>
           </div>
         </div>
         <div className="player__ctrl-extra">

@@ -3,9 +3,9 @@ import './CommentsSection.scss';
 import UserPhoto from '../../assets/images/Mohan-muruge.jpg';
 import Comments from '../Comments/Comments';
 
-export default function CommentsSection({videoID, commentsArray}) {
+export default function CommentsSection({currentVideoID, commentsArray}) {
   // Video ID to be used in future sprint. Logging here to avoid 'not used' in console.
-  console.log("Video ID to connect the form to the API to post comments " + videoID);
+  console.log("Video ID to connect the form to the API to post comments " + currentVideoID);
   return (
     <div>
       <section className="form-section">

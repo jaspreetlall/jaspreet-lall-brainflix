@@ -67,16 +67,16 @@ var playlistArray = [
   }
 ];
 
-function Playlist({videoID}) {
-  console.log(videoID.image);
+function Playlist({currentVideoID}) {
 
   return (
     <section className="playlist">
       <h4 className="playlist__title">Next video</h4>
       <ul className="playlist__list">
 
-        {playlistArray.map((videoItem) => {
-          if (videoItem.id !== videoID) {
+        {playlistArray
+          .filter(videoItem => videoItem.id !== currentVideoID)
+          .map((videoItem) => {
             return (
               <li className="playlist__list-item" key={videoItem.id}>
                 <a className="playlist__list-item-link" href="#">
@@ -92,9 +92,8 @@ function Playlist({videoID}) {
                 </a>
               </li>
             )
-          }
-        })}
-
+          })
+        }
       </ul>
     </section>
   )
