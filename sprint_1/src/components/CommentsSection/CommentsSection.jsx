@@ -4,8 +4,7 @@ import UserPhoto from '../../assets/images/Mohan-muruge.jpg';
 import Comments from '../Comments/Comments';
 
 export default function CommentsSection({currentVideoID, commentsArray}) {
-  // Video ID to be used in future sprint. Logging here to avoid 'not used' in console.
-  console.log("Video ID to connect the form to the API to post comments " + currentVideoID);
+  // currentVideoID to be used in future sprint.
   return (
     <div>
       <section className="form-section">
@@ -24,7 +23,8 @@ export default function CommentsSection({currentVideoID, commentsArray}) {
                 name="userComment"
                 id="userComment"
                 rows="3"
-                placeholder="Add a new comment"></textarea>
+                placeholder="Add a new comment">
+              </textarea>
             </div>
 
             <button className="form-section__block-form-button" type="submit">Comment</button>

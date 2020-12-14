@@ -9,7 +9,8 @@ const Header = () => {
     <header className="header">
         <div className="header__section container">
           <div className="header__section-left">
-            <a className="header__section-left-link" href="#">
+            <a className="header__section-left-link" href="/#">
+              {/* Will include proper link in future sprint. */}
               <img className="header__section-left-link-logo" src={Logo} alt='BrainFlix Logo'/>
             </a>
           </div>

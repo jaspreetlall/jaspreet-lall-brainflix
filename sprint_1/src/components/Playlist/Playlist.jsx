@@ -79,7 +79,8 @@ function Playlist({currentVideoID}) {
           .map((videoItem) => {
             return (
               <li className="playlist__list-item" key={videoItem.id}>
-                <a className="playlist__list-item-link" href="#">
+                <a className="playlist__list-item-link" href="/#">
+                  {/* Will include proper links in future sprint. */}
                   <div 
                     className="playlist__list-item-link-thumb"
                     style={{backgroundImage: `url(${videoItem.image})`}}
