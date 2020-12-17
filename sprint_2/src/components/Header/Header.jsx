@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
 import Logo from '../../assets/logo/Logo-brainflix.svg';
 import UserPhoto from '../../assets/images/Mohan-muruge.jpg'
@@ -9,10 +10,9 @@ const Header = () => {
     <header className="header">
         <div className="header__section container">
           <div className="header__section-left">
-            <a className="header__section-left-link" href="/#">
-              {/* Will include proper link in future sprint. */}
+            <Link className="header__section-left-link" to="/">
               <img className="header__section-left-link-logo" src={Logo} alt='BrainFlix Logo'/>
-            </a>
+            </Link>
           </div>
           <div className="header__section-right">
             <div className="header__section-right-search">
@@ -20,7 +20,9 @@ const Header = () => {
               <img className="header__section-right-search-icon" src={SearchIcon} alt="Search icon" aria-hidden="true"/>
             </div>
             <div className="header__section-right-user">
-              <button className="header__section-right-user-upload">Upload</button>
+              <Link to="/upload">
+                <button className="header__section-right-user-upload">Upload</button>
+              </Link>
               <div className="header__section-right-user-avatar">
                 <img className="header__section-right-user-avatar-img" src={UserPhoto} alt='User'/>
               </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from '../Header/Header';
 import Player from '../Player/Player';
 import Description from '../Description/Description';
 import CommentsSection from '../CommentsSection/CommentsSection';
@@ -52,21 +53,29 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main">
+        <Header />
+
         <Player 
           stream={this.state.mainVideo.video}
           poster={this.state.mainVideo.image}
           duration={this.state.mainVideo.duration}
         />
+
         <div className="main__container container">
           <article className="main__container--body">
+
             <Description currentVideo = {this.state.mainVideo}/>
+
             <CommentsSection
               currentVideoID={this.state.mainVideo.id}
               commentsArray={this.state.mainVideo.comments}
             />
+            
           </article>
           <section className="main__container--aside">
+
             <Playlist currentVideoID={this.state.mainVideo.id}/>
+
           </section>
         </div>
       </div>
