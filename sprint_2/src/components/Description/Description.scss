@@ -1,0 +1,84 @@
+@import '../../partials/mixins';
+@import '../../partials/global';
+@import '../../partials/typography';
+
+.desc {
+  // &--container {
+  //   @include desktop {
+  //     width: 66%;
+  //     margin-left: 0;
+  //   }
+  // }
+  &__head {
+    border-bottom: $border-style;
+    padding-bottom: 22px;
+    &-title {
+      @include mobile-h1-header;
+      margin-bottom: 10px;
+      @include tablet {
+        @include desktop-h1-header;
+      }
+    }
+    &-info {
+      @include tablet {
+        @include flex(row, space-between, center);
+      }
+      &-upload {
+        @include flex(row, flex-start, center);
+        margin-bottom: 18px;
+        @include tablet {
+          margin-bottom: 0;
+        }
+        &-by {
+          @include mobile-h2-sub-header;
+          font-weight: 600;
+        }
+        &-user {
+          @extend .desc__head-info-upload-by;
+          margin: 0 8px 0 4px;
+        }
+        &-date {
+          @include mobile-h4-para-list-contact;
+          color: $color-label;
+        }
+      }
+      &-stats {
+        @include flex(row, flex-start, center);
+        height: 24px;
+        &-views {
+          @include flex(row, flex-start, flex-start);
+          margin-right: 28px;
+          &-icon {
+            margin-right: 8px;
+          }
+          &-value {
+            @include mobile-h4-para-list-contact;
+          }
+        }
+        &-likes {
+          @extend .desc__head-info-stats-views;
+          @include tablet {
+            margin-right: 0;
+          }
+          &-icon {
+            @extend .desc__head-info-stats-views-icon;
+          }
+          &-value {
+            @extend .desc__head-info-stats-views-value;
+          }
+        }
+      }
+    }
+  }
+  &__body {
+    @include mobile-h5;
+    padding: 24px 1px 40px 0;
+    @include tablet {
+      @include desktop-h4-para-comments;
+      width: 73%;
+    }
+    @include desktop {
+      width: 78%;
+    }
+  }
+}

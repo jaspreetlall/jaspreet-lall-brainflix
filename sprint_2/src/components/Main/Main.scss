@@ -1,0 +1,24 @@
+@import '../../partials/mixins';
+@import '../../partials/global';
+
+.main {
+  &__container {
+    @include desktop {
+      @include flex(row, space-between, flex-start);
+    }
+    &--body {
+      @include desktop {
+        padding-right: 24px;
+        width: 65%;
+      }
+    }
+    &--aside {
+      @include tablet {
+        width: 50%;
+      }
+      @include desktop {
+        width: 35%;
+      }
+    }
+  }
+}
