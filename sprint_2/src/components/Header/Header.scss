@@ -1,5 +1,5 @@
-@import '../../partials/mixins';
-@import '../../partials/global';
+@import "../../partials/mixins";
+@import "../../partials/global";
 
 .header {
   background-color: $color-light;
@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   z-index: 2;
-  &+ * {
+  & + * {
     padding-top: 170px;
     @include tablet {
       padding-top: 80px;
@@ -32,7 +32,7 @@
         margin-right: 430px;
       }
       &-link {
-        &-logo{
+        &-logo {
           margin: 12px;
           @include tablet {
             margin-left: 0;
@@ -75,24 +75,27 @@
         width: 100%;
         @include tablet {
           width: auto;
+          margin-top: 4px;
           margin-left: 24px;
         }
         &-upload {
           @extend %button;
           flex-grow: 1;
-          padding-left: 50px;
           position: relative;
+          box-sizing: border-box;
+          line-height: 48px;
+          padding-left: 30px;
           @include tablet {
             padding: 0 16px 0 42px;
             flex-grow: 0;
           }
           &::before {
-            content: '';
+            content: "";
             background-image: url(../../assets/icons/Icon-upload.svg);
             background-repeat: no-repeat;
             position: absolute;
             display: inline-block;
-            transform: translate(-135%, 0%);
+            transform: translate(-135%, 80%);
             width: 20px;
             height: 20px;
           }

@@ -20,9 +20,7 @@ const Header = () => {
               <img className="header__section-right-search-icon" src={SearchIcon} alt="Search icon" aria-hidden="true"/>
             </div>
             <div className="header__section-right-user">
-              <Link to="/upload">
-                <button className="header__section-right-user-upload">Upload</button>
-              </Link>
+              <Link className="header__section-right-user-upload" to="/upload">Upload</Link>
               <div className="header__section-right-user-avatar">
                 <img className="header__section-right-user-avatar-img" src={UserPhoto} alt='User'/>
               </div>

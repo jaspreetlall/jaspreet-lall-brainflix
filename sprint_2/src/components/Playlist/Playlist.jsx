@@ -31,7 +31,7 @@ var playlistArray = [
   },
   {
     id: "9247396a-f9e3-4bf9-a7ba-3251d4b70d2f", 
-    title: "Travel Health Useful Medical Information For", 
+    title: "Travel Health Useful Medical Information For Medical Information For", 
     channel: "Glen Harper", 
     image: VideoThumb3 
   },
