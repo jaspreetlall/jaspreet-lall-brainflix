@@ -4,11 +4,12 @@ import UserPhoto from '../../assets/images/Mohan-muruge.jpg';
 import Comments from '../Comments/Comments';
 
 export default function CommentsSection({currentVideoID, commentsArray}) {
+  let numberOfComments = commentsArray.length;
   // currentVideoID to be used in future sprint.
   return (
     <div>
       <section className="form-section">
-        <h4 className="form-section__comment"><span className="form-section__comment-count">3</span> Comments</h4>
+        <h4 className="form-section__comment"><span className="form-section__comment-count">{numberOfComments}</span> Comments</h4>
         <div className="form-section__block">
           <div className="form-section__block-wrapper">
             <img className="form-section__block-wrapper-img" src={UserPhoto} alt="User"/>

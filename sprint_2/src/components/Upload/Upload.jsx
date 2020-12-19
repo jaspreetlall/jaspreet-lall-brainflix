@@ -3,12 +3,9 @@ import { Link } from 'react-router-dom';
 import './Upload.scss';
 import VideoPreview from '../../assets/images/Upload-video-preview.jpg';
 
-import Header from '../Header/Header';
-
 export default function Upload() {
   return (
     <div>
-      <Header />
 
       <section className="upload container">
         <h1 className="upload__head">Upload Video</h1>
