@@ -12,7 +12,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={Main}/>
             <Route path="/upload" exact component={Upload}/>
-            {/* <Route path="/watch/:id" component={Video}/> */}
+            <Route path="/video/:id" component={Main}/>
           </Switch>
         </>
       </Router>

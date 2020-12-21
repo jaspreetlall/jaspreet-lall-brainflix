@@ -1,10 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import './Playlist.scss';
 
 function Playlist({currentVideoID, playlistArray}) {
   // This component requires a 'currentVideoID' & 'playlistArray'
   // currentVideoID --> to be used to filter against the playlist, to not to be displayed.
   // playlistArray --> for generating the next videos in the list.
+
   return (
     <section className="playlist">
       <h4 className="playlist__title">Next video</h4>
@@ -17,8 +20,9 @@ function Playlist({currentVideoID, playlistArray}) {
           .map((videoItem) => {
             return (
               <li className="playlist__list-item" key={videoItem.id}>
-                <a className="playlist__list-item-link" href="/#">
-                  {/* Will include proper links in future sprint. */}
+                <Link
+                  className="playlist__list-item-link"
+                  to={`/video/${videoItem.id}`}>
                   <div 
                     className="playlist__list-item-link-thumb"
                     style={{backgroundImage: `url(${videoItem.image})`}}
@@ -28,7 +32,7 @@ function Playlist({currentVideoID, playlistArray}) {
                     <h4 className="playlist__list-item-link-info-title">{videoItem.title}</h4>
                     <p className="playlist__list-item-link-info-user">{videoItem.channel}</p>
                   </div>
-                </a>
+                </Link>
               </li>
             )
           })

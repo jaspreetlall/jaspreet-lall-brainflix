@@ -4,7 +4,7 @@ import iconViews from '../../assets/icons/Icon-views.svg';
 import iconLikes from '../../assets/icons/Icon-likes.svg';
 
 export default function Description({currentVideo}) {
-
+  // console.log(currentVideo.channel);
   return (
     <div className="desc desc--container">
       <div className="desc__head">
