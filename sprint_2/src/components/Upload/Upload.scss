@@ -18,7 +18,13 @@
 				border-bottom: $border-style;
 				padding: 36px 0 6px 0;
 			}
+			@include desktop {
+				@include flex(row, space-between, flex-start);
+			}
 			&-preview {
+				@include desktop {
+					margin-right: 24px;
+				}
 				&-title {
 					@include mobile-h5;
 					color: $color-label;
@@ -29,6 +35,9 @@
 						@include desktop-h5;
 						padding-bottom: 4px;
 					}
+					@include desktop {
+						padding-bottom: 0;
+					}
 				}
 				&-wrapper {
 					width: 100%;
@@ -38,6 +47,9 @@
 					@include tablet {
 						width: 47.66%;
 					}
+					@include desktop {
+						width: 346px;
+					}
 					&-img {
 						width: 100%;
 						border-radius: 4px;
@@ -45,6 +57,9 @@
 				}
 			}
 			&-input {
+				@include desktop {
+					flex-grow: 1;
+				}
 				&-block {
 					margin-bottom: 4px;
 					&-label {
@@ -63,11 +78,17 @@
 						border-color: $color-cta-primary;
 						resize: none;
 						@include tablet {
-							padding: 14px 0 0 10px;
+							padding: 4px 0 0 10px;
 							height: 48px;
 						}
 						&--desc {
 							height: 143px;
+							@include tablet {
+								padding: 10px 0 0 10px;
+							}
+							@include desktop {
+								height: 92px;
+							}
 						}
 					}
 				}
@@ -88,6 +109,9 @@
 					@include tablet {
 						width: 160px;
 						margin-right: 10px;
+					}
+					@include desktop {
+						margin-right: 0;
 					}
 				}
 				&--cancel {
