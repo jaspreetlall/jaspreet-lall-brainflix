@@ -36,7 +36,7 @@ export default function CommentsSection({currentVideoId, commentsArray}) {
                 </textarea>
               </div>
   
-              <button className="form-section__block-form-button" type="submit">Comment</button>
+              <button className="form-section__block-form-button" type="button">Comment</button>
             </form>
           </div>
         </section>
