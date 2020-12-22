@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import TextClamp from 'react-string-clamp';
 
 import './Playlist.scss';
 
@@ -29,7 +30,12 @@ function Playlist({currentVideoId, playlistArray}) {
                   >
                   </div>
                   <div className="playlist__list-item-link-info">
-                    <h4 className="playlist__list-item-link-info-title">{videoItem.title}</h4>
+                    <TextClamp
+                      className="playlist__list-item-link-info-title"
+                      element="h4"
+                      text={videoItem.title}
+                      lines="2"
+                    />
                     <p className="playlist__list-item-link-info-user">{videoItem.channel}</p>
                   </div>
                 </Link>

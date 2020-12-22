@@ -8,7 +8,11 @@ export default function CommentsSection({currentVideoId, commentsArray}) {
   // ----->currentVideoId to be used in future sprint
   // -> commentsArray = Array of comment objects for current video on the page
   
-  if (commentsArray) {
+  if (!commentsArray) {
+    return (
+      <p>Loading comments...</p>
+    )
+  } else {
     let numberOfComments = commentsArray.length;
     return (
       <div>
@@ -47,7 +51,4 @@ export default function CommentsSection({currentVideoId, commentsArray}) {
       </div>
     )
   }
-  return (
-    <div></div>
-  )
 }
