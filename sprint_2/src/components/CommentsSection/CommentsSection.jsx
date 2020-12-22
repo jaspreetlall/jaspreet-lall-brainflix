@@ -3,9 +3,11 @@ import './CommentsSection.scss';
 import UserPhoto from '../../assets/images/Mohan-muruge.jpg';
 import Comments from '../Comments/Comments';
 
-export default function CommentsSection({currentVideoID, commentsArray}) {
-  // console.log(commentsArray);
-  // currentVideoID to be used in future sprint.
+export default function CommentsSection({currentVideoId, commentsArray}) {
+  // -> currentVideoId = Video ID of current video on the page
+  // ----->currentVideoId to be used in future sprint
+  // -> commentsArray = Array of comment objects for current video on the page
+  
   if (commentsArray) {
     let numberOfComments = commentsArray.length;
     return (
@@ -36,6 +38,10 @@ export default function CommentsSection({currentVideoID, commentsArray}) {
         </section>
   
         <section>
+          {/*
+            Comments Component
+            -> commentsArray = Array of comment objects
+          */}
           <Comments commentsArray={commentsArray}/>
         </section>
       </div>

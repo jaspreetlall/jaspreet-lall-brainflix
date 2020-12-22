@@ -6,6 +6,10 @@ import iconVolume from '../../assets/icons/Icon-volume.svg';
 import iconScrub from '../../assets/icons/Icon-scrubber-control.svg';
 
 function Player({stream, poster, duration}) {
+  // -> stream = URL of video stream
+  // -> poster = URL of poster image
+  // -> duration = total video duration
+
   return (
     <section className="player">
       <video className="player__video" poster={poster}></video>

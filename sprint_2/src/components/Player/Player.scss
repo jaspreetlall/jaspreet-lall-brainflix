@@ -1,136 +1,134 @@
-@import '../../partials/mixins';
-@import '../../partials/global';
-@import '../../partials/typography';
+@import "../../partials/mixins";
+@import "../../partials/global";
+@import "../../partials/typography";
 
 %control-background-style {
-  background-color: $color-dark-control;
-  border-radius: 4px;
-  height: 32px;
+	background-color: $color-dark-control;
+	border-radius: 4px;
+	height: 32px;
 }
 
 %control-button {
-  background-color: transparent;
-  border-radius: 4px;
-  border: none;
-  height: 100%;
-  padding: 0;
-  transition: ease-in-out 0.2s;
-  &:hover {
-    background-color: $color-dark-control-hover;
-  }
+	background-color: transparent;
+	border-radius: 4px;
+	border: none;
+	height: 100%;
+	padding: 0;
+	transition: ease-in-out 0.2s;
+	&:hover {
+		background-color: $color-dark-control-hover;
+	}
 }
 
 .player {
-  width: 100%;
-  height: 56vw;
-  position: relative;
-  background-color: $color-dark;
-  text-align: center;
-  @include tablet {
-    height: 52vw;
-  }
-  @include desktop {
-    height: 37.5vw;
-  }
-  &__video{
-    width: 100%;
-    height: 100%;
-    @include tablet {}
-  }
-  &__ctrl {
-    @include flex(row, space-between, center);
-    position: absolute;
-    right: 0;
-    bottom: 3%;
-    left: 0;
-    &--container {
-      width: 90vw;
-      margin: auto;
-      @include tablet {
-        width: 90%;
-      }
-      @include desktop {
-        width: 64%;
-      }
-    }
-    &-play {
-      @extend %control-background-style;
-      margin-right: 8px;
-      width: 48px;
-      @include tablet {
-        margin-right: 16px;
-      }
-      &-button {
-        @include flex-center;
-        @extend %control-button;
-        width: 100%;
-        &-icon {
-          padding: 0 0 1px 4px;
-        }
-      }
-
-    }
-    &-progress {
-      @include flex(row, space-between, center);
-      @extend %control-background-style;
-      flex-grow: 1;
-      margin-right: 8px;
-      @include tablet {
-        margin-right: 16px;
-      }
-      &-bar {
-        @include flex-center;
-        position: relative;
-        width: 100%;
-        &-line {
-          width: 100%;
-          margin: 0 16px;
-          border: 2px solid black;
-        }
-        &-dot {
-          display: none;
-        }
-      }
-      &-time {
-        display: none;
-        @include tablet {
-          display: block;
-          margin-right: 16px;
-        }
-        &-first {
-          @include desktop-h5;
-          color: $color-light;
-          opacity: 0.7;
-        }
-        &-separator {
-          @extend .player__ctrl-progress-time-first;
-          padding: 0 3px;
-        }
-        &-second {
-          @extend .player__ctrl-progress-time-first;
-        }
-      }
-    }
-    &-extra {
-      @include flex(row, space-around, center);
-      @extend %control-background-style;
-      width: 72px;
-      @include tablet {
-        width: 80px;
-      }
-      &-fullscreen {
-        @extend %control-button;
-        width: 45%;
-        &-icon {
-          padding: 4px 0 0 8px;
-        }
-      }
-      &-volume {
-        @extend .player__ctrl-extra-fullscreen;
-        &-icon {
-          padding: 4px 8px 0 0px;
-        }
-      }
-    }
-  }
+	width: 100%;
+	height: 56vw;
+	position: relative;
+	background-color: $color-dark;
+	text-align: center;
+	@include tablet {
+		height: 52vw;
+	}
+	@include desktop {
+		height: 37.5vw;
+	}
+	&__video {
+		height: 100%;
+		max-width: 100%;
+	}
+	&__ctrl {
+		@include flex(row, space-between, center);
+		position: absolute;
+		right: 0;
+		bottom: 3%;
+		left: 0;
+		&--container {
+			width: 90vw;
+			margin: auto;
+			@include tablet {
+				width: 90%;
+			}
+			@include desktop {
+				width: 64%;
+			}
+		}
+		&-play {
+			@extend %control-background-style;
+			margin-right: 8px;
+			width: 48px;
+			@include tablet {
+				margin-right: 16px;
+			}
+			&-button {
+				@include flex-center;
+				@extend %control-button;
+				width: 100%;
+				&-icon {
+					padding: 0 0 1px 4px;
+				}
+			}
+		}
+		&-progress {
+			@include flex(row, space-between, center);
+			@extend %control-background-style;
+			flex-grow: 1;
+			margin-right: 8px;
+			@include tablet {
+				margin-right: 16px;
+			}
+			&-bar {
+				@include flex-center;
+				position: relative;
+				width: 100%;
+				&-line {
+					width: 100%;
+					margin: 0 16px;
+					border: 2px solid black;
+				}
+				&-dot {
+					display: none;
+				}
+			}
+			&-time {
+				display: none;
+				@include tablet {
+					display: block;
+					margin-right: 16px;
+				}
+				&-first {
+					@include desktop-h5;
+					color: $color-light;
+					opacity: 0.7;
+				}
+				&-separator {
+					@extend .player__ctrl-progress-time-first;
+					padding: 0 3px;
+				}
+				&-second {
+					@extend .player__ctrl-progress-time-first;
+				}
+			}
+		}
+		&-extra {
+			@include flex(row, space-around, center);
+			@extend %control-background-style;
+			width: 72px;
+			@include tablet {
+				width: 80px;
+			}
+			&-fullscreen {
+				@extend %control-button;
+				width: 45%;
+				&-icon {
+					padding: 4px 0 0 8px;
+				}
+			}
+			&-volume {
+				@extend .player__ctrl-extra-fullscreen;
+				&-icon {
+					padding: 4px 8px 0 0px;
+				}
+			}
+		}
+	}
 }

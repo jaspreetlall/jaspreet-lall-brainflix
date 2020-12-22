@@ -9,12 +9,14 @@
 		&--body {
 			@include desktop {
 				width: 65%;
+				flex-grow: 1;
 				border-right: $border-style;
 			}
 		}
 		&--aside {
 			@include tablet {
 				width: 50%;
+				max-width: 336px;
 			}
 			@include desktop {
 				width: 35%;

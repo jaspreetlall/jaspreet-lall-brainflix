@@ -4,7 +4,11 @@ import iconViews from '../../assets/icons/Icon-views.svg';
 import iconLikes from '../../assets/icons/Icon-likes.svg';
 
 export default function Description({currentVideo}) {
-  // console.log(currentVideo.channel);
+  // -> currentVideo = Object with full info of current video on the page
+
+  // Converting timestamp to a human readable date
+  let utcDate = (new Date(currentVideo.timestamp)).toLocaleDateString('en-US');
+
   return (
     <div className="desc desc--container">
       <div className="desc__head">
@@ -13,7 +17,7 @@ export default function Description({currentVideo}) {
           <div className="desc__head-info-upload">
             <span className="desc__head-info-upload-by">By</span>
             <div className="desc__head-info-upload-user">{currentVideo.channel}</div>
-            <div className="desc__head-info-upload-date">{currentVideo.timestamp}</div>
+            <div className="desc__head-info-upload-date">{utcDate}</div>
           </div>
           <div className="desc__head-info-stats">
             <div className="desc__head-info-stats-views">

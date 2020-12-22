@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import './Playlist.scss';
 
-function Playlist({currentVideoID, playlistArray}) {
+function Playlist({currentVideoId, playlistArray}) {
   // This component requires a 'currentVideoID' & 'playlistArray'
   // currentVideoID --> to be used to filter against the playlist, to not to be displayed.
   // playlistArray --> for generating the next videos in the list.
@@ -15,7 +15,7 @@ function Playlist({currentVideoID, playlistArray}) {
 
         {playlistArray
           // filtering out the videos that do not match the current video
-          .filter(videoItem => videoItem.id !== currentVideoID)
+          .filter(videoItem => videoItem.id !== currentVideoId)
           // mapping over the array of resulting video items to make the list.
           .map((videoItem) => {
             return (
