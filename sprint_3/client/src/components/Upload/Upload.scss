@@ -1,0 +1,133 @@
+@import "../../partials/mixins";
+@import "../../partials/global";
+@import "../../partials/typography";
+
+.upload {
+	&__head {
+		@include mobile-h1-header;
+		margin: 28px 0 32px 0;
+		@include tablet {
+			@include desktop-h1-header;
+			margin: 48px 0 28px 0;
+		}
+	}
+	&__form {
+		&-detail {
+			@include tablet {
+				border-top: $border-style;
+				border-bottom: $border-style;
+				padding: 36px 0 6px 0;
+			}
+			@include desktop {
+				@include flex(row, space-between, flex-start);
+			}
+			&-preview {
+				@include desktop {
+					margin-right: 24px;
+				}
+				&-title {
+					@include mobile-h5;
+					color: $color-label;
+					text-transform: uppercase;
+					font-weight: 600;
+					margin: 0;
+					@include tablet {
+						@include desktop-h5;
+						padding-bottom: 4px;
+					}
+					@include desktop {
+						padding-bottom: 0;
+					}
+				}
+				&-wrapper {
+					width: 100%;
+					height: fit-content;
+					box-sizing: border-box;
+					margin-bottom: 28px;
+					@include tablet {
+						width: 47.66%;
+					}
+					@include desktop {
+						width: 346px;
+					}
+					&-img {
+						width: 100%;
+						border-radius: 4px;
+					}
+				}
+			}
+			&-input {
+				@include desktop {
+					flex-grow: 1;
+				}
+				&-block {
+					margin-bottom: 4px;
+					&-label {
+						@extend .upload__form-detail-preview-title;
+					}
+					&-field {
+						box-sizing: border-box;
+						padding: 12px 0 8px 12px;
+						min-height: 48px;
+						width: 100%;
+						min-width: 204px;
+						border: $border-style;
+						border-radius: 4px;
+						margin-bottom: 20px;
+						background-color: $color-input-field-background;
+						border-color: $color-cta-primary;
+						resize: none;
+						@include tablet {
+							padding: 4px 0 0 10px;
+							height: 48px;
+						}
+						&--desc {
+							height: 143px;
+							@include tablet {
+								padding: 10px 0 0 10px;
+							}
+							@include desktop {
+								height: 92px;
+							}
+						}
+					}
+				}
+			}
+		}
+		&-action {
+			margin-top: 6px;
+			@include tablet {
+				@include flex(row-reverse, flex-start, center);
+				margin-top: 36px;
+			}
+			&-button {
+				@include flex(column, center, center);
+				&--publish {
+					@extend %button;
+					width: 100%;
+					margin: 0 0 16px 0;
+					@include tablet {
+						width: 160px;
+						margin-right: 10px;
+					}
+					@include desktop {
+						margin-right: 0;
+					}
+				}
+				&--cancel {
+					@extend .upload__form-action-button--publish;
+					border: none;
+					background-color: transparent;
+					display: inline-block;
+					line-height: 48px;
+					color: $color-cta-primary;
+					&:hover,
+					&:focus {
+						background-color: transparent;
+						border-color: transparent;
+					}
+				}
+			}
+		}
+	}
+}

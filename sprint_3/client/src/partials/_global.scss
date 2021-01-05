@@ -1,0 +1,62 @@
+body {
+	@include reset-margin-padding;
+}
+
+ul {
+	@extend body;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+// Variables
+$color-accent: #0065ad;
+$color-primary: #323232;
+$color-light: #ffffff;
+$color-dark: #000000;
+$color-dark-control: #00000080;
+$color-dark-control-hover: #00000082;
+
+$color-cta-primary: #0095ff;
+$color-cta-hover: #0065ad;
+$color-cta-delete: #6d0000;
+
+$color-label: #afafaf;
+$color-input-field-background: #fafafa;
+$color-input-field-border: #e1e1e1;
+
+$border-style: 2px solid $color-input-field-border;
+
+// Extends
+
+%button {
+	border: 1px solid $color-cta-primary;
+	background-color: $color-cta-primary;
+	border-radius: 4px;
+	color: $color-light;
+	font-size: 0.9rem;
+	font-weight: 600;
+	height: 48px;
+	text-transform: uppercase;
+	text-align: center;
+	transition: ease-in-out 0.3s;
+	&:hover {
+		background-color: $color-cta-hover;
+		border-color: $color-cta-hover;
+	}
+}
+
+// Container
+
+.container {
+	width: 90vw;
+	margin: auto;
+	@include tablet {
+		width: 94vw;
+	}
+	@include desktop {
+		width: 80vw;
+	}
+}
