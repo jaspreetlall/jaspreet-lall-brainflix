@@ -25,7 +25,10 @@ export default function CommentsSection({currentVideoId, commentsArray}) {
             <form className="form-section__block-form" id="commentForm">
             
               <div className="form-section__block-form-section">
-                <label className="form-section__block-form-section-label" htmlFor="userComment">Join the conversation</label>
+                <label
+                  className="form-section__block-form-section-label"
+                  htmlFor="userComment">Join the conversation
+                </label>
                 <textarea
                   className="form-section__block-form-section-input"
                   type="text"
