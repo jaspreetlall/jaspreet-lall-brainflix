@@ -1,14 +1,15 @@
 const { request, response } = require("express");
 const uuid = require("uuid4");
 const express = require("express");
+const cors = require('cors');
 const app = express();
+
+// Using CORS to bypass security measures
+app.use(cors());
 
 // Importing Data from Data.js
 const data = require("./data");
 const videosArray = data.videos;
-
-// Using CORS to bypass security measures
-// app.use(cors());
 
 // Importing and using body parser middleware
 // to retrieve video post info

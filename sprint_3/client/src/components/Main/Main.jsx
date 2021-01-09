@@ -17,8 +17,9 @@ class Main extends React.Component {
     playlistArray: []
   }
 
-  apiURL = 'https://project-2-api.herokuapp.com/videos';
-  apiKey = '?api_key=7f2b2a75-7c50-4fdd-833d-96e042a472fd';
+  apiURL = 'http://localhost:8080/videos';
+  apiKey = '';
+  // ?api_key=7f2b2a75-7c50-4fdd-833d-96e042a472fd
 
   componentDidMount() {
     const directUrlId = this.props.match.params.id;
