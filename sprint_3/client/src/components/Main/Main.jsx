@@ -18,8 +18,6 @@ class Main extends React.Component {
   }
 
   apiURL = 'http://localhost:8080/videos';
-  apiKey = '';
-  // ?api_key=7f2b2a75-7c50-4fdd-833d-96e042a472fd
 
   componentDidMount() {
     const directUrlId = this.props.match.params.id;
@@ -36,8 +34,8 @@ class Main extends React.Component {
 
   apiFetchCalls = (videoUrl) => {
     Axios.all([
-      Axios.get(`${this.apiURL}${this.apiKey}`),
-      Axios.get(`${this.apiURL}/${videoUrl}${this.apiKey}`)
+      Axios.get(`${this.apiURL}`),
+      Axios.get(`${this.apiURL}/${videoUrl}`)
     ])
     .then((res) => {
       this.setState({

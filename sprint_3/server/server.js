@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 // Endpoint - videos list
 app
   .route('/videos')
+  // GET videos
   .get((_request, response) => {
     // Array to store the video list
     let nextVideos = [];
@@ -36,6 +37,7 @@ app
     // Responding with status and next videos array
     response.status(200).send(nextVideos);
   })
+  // POST video
   .post((request, response) => {
     let uploadVideo = {
       "id": uuid4(),
@@ -43,8 +45,8 @@ app
       "channel": request.body.channel,
       "image": request.body.image,
       "description": request.body.description,
-      "views": "",
-      "likes": "",
+      "views": "0",
+      "likes": "0",
       "duration": "",
       "video": "",
       "timestamp": Date.now(),

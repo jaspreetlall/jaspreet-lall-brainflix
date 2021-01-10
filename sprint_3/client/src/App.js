@@ -4,6 +4,7 @@ import Upload from './components/Upload/Upload';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
+  
   return (
     <div>
       <Router>
@@ -11,7 +12,11 @@ function App() {
           <Header />
           <Switch>
             <Route path="/" exact component={Main}/>
-            <Route path="/upload" exact component={Upload}/>
+            <Route
+              path="/upload"
+              exact
+              component={Upload}
+            />
             <Route path="/video/:id" component={Main}/>
           </Switch>
         </>
