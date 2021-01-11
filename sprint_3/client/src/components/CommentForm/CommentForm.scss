@@ -1,0 +1,153 @@
+@import "../../partials/mixins";
+@import "../../partials/global";
+@import "../../partials/typography";
+
+/* Section - Comment form */
+
+.form-section {
+	@include tablet {
+		box-sizing: border-box;
+		padding-right: 36px;
+	}
+	&__comment {
+		@include mobile-h2-sub-header;
+		@include reset-margin-padding;
+		&-count {
+			@extend .form-section__comment;
+		}
+	}
+	&__block {
+		@include flex(row, flex-start, flex-start);
+		margin-top: 32px;
+		@include tablet {
+			justify-content: center;
+		}
+		&-wrapper {
+			display: inline-block;
+			width: 48px;
+			height: 48px;
+			margin-right: 18px;
+			margin-top: 18px;
+			border-radius: 50%;
+			overflow: hidden;
+			transform: translateY(3px);
+			&-img {
+				height: 100%;
+			}
+		}
+		&-form {
+			flex-grow: 1;
+			@include tablet {
+				@include flex(row, flex-start, center);
+			}
+			&-section {
+				@include tablet {
+					flex-grow: 1;
+					margin-right: 16px;
+				}
+				@include flex(column, flex-start, flex-start);
+				&-label {
+					@include mobile-h5;
+					color: $color-label;
+					text-transform: uppercase;
+					font-weight: 600;
+					padding-bottom: 2px;
+					@include tablet {
+						@include desktop-h5;
+					}
+				}
+				&-input {
+					box-sizing: border-box;
+					padding: 8px 0 8px 10px;
+					min-height: 48px;
+					width: 100%;
+					min-width: 204px;
+					border: $border-style;
+					border-radius: 4px;
+					margin-bottom: 20px;
+					background-color: $color-input-field-background;
+					border-color: $color-cta-primary;
+					height: 90px;
+					resize: none;
+					@include tablet {
+						padding: 14px 0 0 10px;
+						height: 48px;
+					}
+				}
+			}
+			&-button {
+				@extend %button;
+				margin: 0 0 20px 0;
+				width: 100%;
+				padding: 0;
+				@include tablet {
+					align-self: flex-end;
+					min-width: auto;
+					max-width: 140px;
+				}
+			}
+		}
+	}
+}
+
+/* Section - Comments */
+
+.comments {
+	&__block {
+		@include flex(row, flex-start, flex-start);
+		border-bottom: $border-style;
+		padding: 24px 0;
+		&:first-of-type {
+			border-top: $border-style;
+		}
+		&:last-of-type {
+			margin-bottom: 36px;
+		}
+		&-wrapper {
+			display: inline-block;
+			width: 48px;
+			height: 48px;
+			margin-right: 18px;
+			margin-top: 18px;
+			border-radius: 50%;
+			overflow: hidden;
+			transform: translateY(3px);
+			min-width: 48px;
+			margin-top: 0;
+			background-color: #d8d8d8;
+		}
+		&-content {
+			flex-grow: 1;
+			@include tablet {
+				margin-right: 36px;
+			}
+			&-head {
+				@include flex(row, space-between, center);
+				margin: 2px 0 16px 0;
+				@include tablet {
+					justify-content: flex-start;
+					margin: 2px 0 8px 0;
+				}
+				&-name {
+					@include mobile-h4-para-list-contact;
+					font-weight: 600;
+					margin: 0;
+					@include tablet {
+						@include desktop-h3-subheader;
+						margin-right: 10px;
+					}
+				}
+				&-timestamp {
+					@include mobile-h5;
+					color: $color-label;
+				}
+			}
+			&-para {
+				@include mobile-h4-para-list-contact;
+				@include tablet {
+					@include desktop-h4-para-comments;
+				}
+			}
+		}
+	}
+}

@@ -1,9 +1,8 @@
 import React from 'react';
-import './CommentsSection.scss';
+import './CommentForm.scss';
 import UserPhoto from '../../assets/images/Mohan-muruge.jpg';
-import Comments from '../Comments/Comments';
 
-export default function CommentsSection({currentVideoId, commentsArray}) {
+export default function CommentForm({currentVideoId, commentsArray}) {
   // -> currentVideoId = Video ID of current video on the page
   // ----->currentVideoId to be used in future sprint
   // -> commentsArray = Array of comment objects for current video on the page
@@ -49,7 +48,7 @@ export default function CommentsSection({currentVideoId, commentsArray}) {
             Comments Component
             -> commentsArray = Array of comment objects
           */}
-          <Comments commentsArray={commentsArray}/>
+          {/* <Comments commentsArray={commentsArray}/> */}
         </section>
       </div>
     )

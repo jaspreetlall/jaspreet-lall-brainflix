@@ -2,8 +2,9 @@ import React from 'react';
 import Axios from 'axios';
 import Player from '../Player/Player';
 import Description from '../Description/Description';
-import CommentsSection from '../CommentsSection/CommentsSection';
+import CommentForm from '../CommentForm/CommentForm';
 import Playlist from '../Playlist/Playlist';
+import Comments from '../Comments/Comments';
 
 import './Main.scss';
 
@@ -27,7 +28,7 @@ class Main extends React.Component {
   componentDidUpdate() {
     const currentUrlId = this.props.match.params.id;
     if (currentUrlId && this.state.currentVideoId !== currentUrlId) {
-      this.apiFetchCalls(currentUrlId || this.state.defaultVideoId);
+      this.apiFetchCalls(currentUrlId || this.defaultVideoId);
       window.scrollTo(0,0)
     }
   }
@@ -71,14 +72,20 @@ class Main extends React.Component {
             <Description currentVideo = {this.state.mainVideo}/>
 
             {/* 
-              CommentsSection Component
+              CommentForm Component
               -> currentVideoId = Video Id of current video on the page
               -> commentsArray = Array of comment objects for current video on the page
             */}
-            <CommentsSection
+            <CommentForm
               currentVideoId={this.state.mainVideo.id}
               commentsArray={this.state.mainVideo.comments}
             />
+
+            {/*
+              Comments Component
+              -> commentsArray = Array of comment objects
+            */}
+            <Comments commentsArray={this.state.mainVideo.comments}/>
             
           </article>
           <section className="main__container--aside">
