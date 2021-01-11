@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 // Endpoint - videos list
 app
   .route('/videos')
+
   // GET videos
   .get((_request, response) => {
     // Array to store the video list
@@ -37,6 +38,7 @@ app
     // Responding with status and next videos array
     response.status(200).send(nextVideos);
   })
+
   // POST video
   .post((request, response) => {
     let uploadVideo = {
@@ -56,7 +58,7 @@ app
     response.status(201).send(uploadVideo)
   })
 
-// Endpoints - Individual video route
+// Endpoint - Individual video route
 app
   .route('/videos/:videoID')
   .get((request, response) => {
