@@ -3,6 +3,7 @@
 @import "../../partials/typography";
 
 .playlist {
+	margin-top: 24px;
 	&__title {
 		@include mobile-h5;
 		color: $color-label;

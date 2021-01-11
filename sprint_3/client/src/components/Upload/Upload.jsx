@@ -11,7 +11,8 @@ class Upload extends React.Component {
   state = {
     title: "",
     description: "",
-    buttonDisabled: true
+    buttonDisabled: true,
+    newVideoId: ''
   }
 
   // Function to update the title state with every field change 
@@ -39,7 +40,6 @@ class Upload extends React.Component {
       "image": videoThumbnail,
       "description": this.state.description
     })
-
   }
 
   // Function to set the state of 'setButtonStatus'
@@ -58,7 +58,13 @@ class Upload extends React.Component {
     Axios
       .post(`${this.apiURL}`, videoObject)
       .then((res) => {
-        console.log(res)
+        this.setState({
+          newVideoId: res.data.id
+        }, () => {
+          // Redirecting user to newly posted video
+          // after successful upload to API
+          this.props.history.push(`/video/${this.state.newVideoId}`)
+        })
       })
       .catch((err) => console.log(err));
   }
@@ -66,7 +72,6 @@ class Upload extends React.Component {
   render() {
     return (
       <div>
-  
         <section className="upload container">
           <h1 className="upload__head">Upload Video</h1>
           <form
@@ -90,7 +95,6 @@ class Upload extends React.Component {
                     type="text"
                     id="title"
                     name="title"
-                    // value={this.updateTitle}
                     onChange={this.updateTitle}
                     placeholder="Add a title to your video"
                   />
@@ -103,7 +107,6 @@ class Upload extends React.Component {
                     type="text"
                     id="description"
                     name="description"
-                    // value={this.updateDescription}
                     onChange={this.updateDescription}
                     placeholder="Add a description of your video"
                   />
