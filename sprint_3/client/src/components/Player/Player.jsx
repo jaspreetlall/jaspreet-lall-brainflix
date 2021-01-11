@@ -12,7 +12,9 @@ function Player({stream, poster, duration}) {
 
   return (
     <section className="player">
-      <video className="player__video" poster={poster}></video>
+      <div className="player__wrapper">
+        <video className="player__wrapper-video" poster={poster}></video>
+      </div>
       {/* Video stream source to be included in future sprint. */}
       <div className="player__ctrl player__ctrl--container">
         <div className="player__ctrl-play">

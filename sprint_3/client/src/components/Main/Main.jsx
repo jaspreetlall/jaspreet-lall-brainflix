@@ -27,9 +27,11 @@ class Main extends React.Component {
 
   componentDidUpdate() {
     const currentUrlId = this.props.match.params.id;
+    // if(currentUrlId) {
+    //   console.log("ID exists " + currentUrlId);
+    // } else { console.log("ID doesn't exist")}
     if (currentUrlId && this.state.currentVideoId !== currentUrlId) {
       this.apiFetchCalls(currentUrlId || this.defaultVideoId);
-      window.scrollTo(0,0)
     }
   }
 
