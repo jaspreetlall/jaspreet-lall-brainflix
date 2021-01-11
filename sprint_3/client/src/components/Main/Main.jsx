@@ -28,9 +28,13 @@ class Main extends React.Component {
   componentDidUpdate() {
     const directUrlId = this.props.match.params.id;
 
+    // Checking if there is no video ID is present in URL
+    // Also checking if currently loaded video is not the same as default video
     if (!directUrlId && (this.state.currentVideoId !== this.defaultVideoId)) {
       this.apiFetchCalls(this.defaultVideoId);
     }
+    // Checking if video ID is present in URL
+    // and load only if it is different from the currently loaded video 
     else if (directUrlId && (this.state.currentVideoId !== directUrlId)) {
       this.apiFetchCalls(directUrlId || this.defaultVideoId);
     }
