@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
-import Logo from '../../assets/logo/Logo-brainflix.svg';
 import UserPhoto from '../../assets/images/Mohan-muruge.jpg'
 import SearchIcon from '../../assets/icons/Icon-search.svg'
 
@@ -11,7 +10,8 @@ const Header = () => {
         <div className="header__section container">
           <div className="header__section-left">
             <Link className="header__section-left-link" to="/">
-              <img className="header__section-left-link-logo" src={Logo} alt='BrainFlix Logo'/>
+              <h1 className="header__section-left-link-title">TubeFlix</h1>
+              <div className="header__section-left-link-icon"></div>
             </Link>
           </div>
           <div className="header__section-right">

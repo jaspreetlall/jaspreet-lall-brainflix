@@ -2,7 +2,8 @@
 @import "../../partials/global";
 
 .header {
-  background-color: $color-light;
+  background-color: $color-nav-background;
+  border-bottom: 1px solid $color-label;
   height: 170px;
   position: fixed;
   top: 0;
@@ -33,11 +34,24 @@
         margin-right: 430px;
       }
       &-link {
-        &-logo {
-          margin: 12px;
-          @include tablet {
-            margin-left: 0;
+        position: relative;
+        &-title {
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 20px;
+          &:hover {
+            border-bottom: 2px solid $color-accent;
           }
+        }
+        &-icon {
+          display: inline-block;
+          position: absolute;
+          right: -104px;
+          top: 10px;
+          height: 8px;
+          width: 8px;
+          background-color: $color-accent;
+          clip-path: polygon(0 0, 0% 100%, 100% 50%);
         }
       }
     }

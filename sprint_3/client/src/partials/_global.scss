@@ -12,22 +12,25 @@ a {
 }
 
 // Variables
-$color-accent: #0065ad;
-$color-primary: #323232;
+$color-accent: #37ad00;
 $color-light: #ffffff;
-$color-dark: #000000;
+$color-dark: #202020;
 $color-dark-control: #00000080;
 $color-dark-control-hover: #00000082;
 
-$color-cta-primary: #0095ff;
-$color-cta-hover: #0065ad;
-$color-cta-delete: #6d0000;
+$color-cta-primary: #37ad00;
+$color-cta-hover: #257500;
 
 $color-label: #afafaf;
-$color-input-field-background: #fafafa;
-$color-input-field-border: #e1e1e1;
+$color-nav-background: #202020;
+$color-input-field-background: #111111;
+$color-input-field-border: #e1e1e13f;
 
 $border-style: 2px solid $color-input-field-border;
+
+html {
+	background-color: $color-dark;
+}
 
 // Extends
 
